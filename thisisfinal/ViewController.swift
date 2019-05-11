@@ -10,11 +10,40 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var scrollview: UIScrollView!
+    
+    let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //ステイタスバーを非表示
+        self.setNeedsStatusBarAppearanceUpdate()
+        
+        scrollview.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height * 7)
+        scrollview.isPagingEnabled = true
+        let size = scrollview.frame.size
+        
+        for i in 0..<7 {
+            let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
+            
+            contentView.backgroundColor = UIColor(red: 0.1*CGFloat(i), green: 0.8, blue: 1.0-0.1*CGFloat(i), alpha: 1.0)
+            
+            let label = UILabel(frame: CGRect(x: 0, y: 100, width: size.width, height: 100))
+            label.textAlignment = .center
+            //フォント変える
+            label.font = UIFont(name: "Chalkboard SE", size: 70)
+            label.text = days[i]
+            
+            contentView.addSubview(label)
+            self.scrollview.addSubview(contentView)
+            
+        }
+
+        }
+    //ステイタスバーを非表示にするためにオーバービューする
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
-
-
+    
 }
-
