@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate {
 
+    //写真表示用ImageView
+    @IBOutlet var photoImageView: UIImageView!
+    
+    //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
     
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
@@ -46,4 +50,28 @@ class ViewController: UIViewController {
         return true
     }
     
+    //「アルバム」ボタンを押した時に呼ばれるメソッド
+    @IBAction func onTappedAlbumButton() {
+        presentPickerController(sourceType: .photoLibrary)
+    }
+    }
+    
+    //アルバムの呼び出しメゾット(アルバムのソースタイプが引数
+    func presentPickerController(sourceType: UIImagePickerController.SourceType){
+        if UIImagePickerController.isSourceTypeAvailable(sourceType){
+            let picker = UIImagePickerController()
+            picker.sourceType = sourceType
+            self.present(picker, animated:true,completion:nil)
+        }
 }
+    
+    //写真が選択された時に呼ばれるメソッド
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]) {
+        self.dismiss(animated: true, completion: nil)
+        //画像を出力
+        photoImageView.image = info[.originalImage]as? UIImage
+    }
+       
+
+

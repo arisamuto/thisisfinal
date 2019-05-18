@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>アルバムへのアクセスを許可</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>アルバムへの画像の保存を許可</string>
 </dict>
 </plist>
