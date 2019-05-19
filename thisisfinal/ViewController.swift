@@ -28,7 +28,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         scrollview.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height * 7)
         scrollview.isPagingEnabled = true
         let size = scrollview.frame.size
+        //ラベルを最前面に移動
+        self.view.bringSubviewToFront(myLabel)
         
+    
                 for i in 0..<7 {
             let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
             
