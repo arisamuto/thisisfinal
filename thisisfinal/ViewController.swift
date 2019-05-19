@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     //写真表示用ImageView
     @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var pictures: UIButton!
     
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
@@ -28,7 +29,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
         scrollview.isPagingEnabled = true
         let size = scrollview.frame.size
         
-        for i in 0..<7 {
+                for i in 0..<7 {
             let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
             
             contentView.backgroundColor = UIColor(red: 0.1*CGFloat(i), green: 0.8, blue: 1.0-0.1*CGFloat(i), alpha: 1.0)
@@ -43,24 +44,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
             self.scrollview.addSubview(contentView)
             
         }
-
         }
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     //「アルバム」ボタンを押した時に呼ばれるメソッド
     @IBAction func onTappedAlbumButton() {
         presentPickerController(sourceType: .photoLibrary)
+        
     }
-    }
+
     
     //アルバムの呼び出しメゾット(アルバムのソースタイプが引数
     func presentPickerController(sourceType: UIImagePickerController.SourceType){
         if UIImagePickerController.isSourceTypeAvailable(sourceType){
             let picker = UIImagePickerController()
             picker.sourceType = sourceType
+            picker.delegate = self
             self.present(picker, animated:true,completion:nil)
         }
 }
@@ -72,6 +78,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
         //画像を出力
         photoImageView.image = info[.originalImage]as? UIImage
     }
-       
-
-
+}
