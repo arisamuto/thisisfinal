@@ -18,33 +18,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-c4-o49">
-                                <rect key="frame" x="326" y="50" width="72" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.74843840620000002" blue="0.24622258799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Pictures"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-c4-o49">
+                                <rect key="frame" x="324" y="70" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.90979081390000005" green="0.93211835620000005" blue="0.16853550079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qf0-Mz-ajc"/>
+                                </constraints>
+                                <state key="normal" title="★"/>
                                 <connections>
                                     <action selector="onTappedAlbumButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="xR0-nf-5YZ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-Be-165">
-                                <rect key="frame" x="-1" y="294" width="415" height="361"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-Be-165">
+                                <rect key="frame" x="0.0" y="245" width="414" height="248"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="248" id="8LD-8F-5eN"/>
+                                </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Q1-14F">
-                                <rect key="frame" x="-1" y="0.0" width="414" height="896"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Q1-14F">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2oG-Q1-14F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6je-ak-Wxa"/>
-                            <constraint firstItem="2oG-Q1-14F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gz0-d5-o9o"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MVc-Cg-fdA"/>
-                            <constraint firstAttribute="bottom" secondItem="2oG-Q1-14F" secondAttribute="bottom" id="Wip-AO-HbT"/>
+                            <constraint firstItem="sWk-c4-o49" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="324" id="QQW-rx-3GF"/>
+                            <constraint firstItem="2oG-Q1-14F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TDl-Xr-gu9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vfs-Be-165" secondAttribute="bottom" constant="369" id="Vcg-wf-xJt"/>
+                            <constraint firstItem="sWk-c4-o49" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="XEy-8t-L44"/>
                             <constraint firstAttribute="bottom" secondItem="2oG-Q1-14F" secondAttribute="bottom" id="YPV-l9-PKQ"/>
-                            <constraint firstItem="2oG-Q1-14F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d7j-Nx-sx6"/>
+                            <constraint firstItem="vfs-Be-165" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfc-zn-5Af"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mAX-Lv-ee3"/>
+                            <constraint firstItem="vfs-Be-165" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nul-zt-2Ly"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uPx-Dq-qek"/>
+                            <constraint firstItem="2oG-Q1-14F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wEM-At-QVY"/>
+                            <constraint firstItem="vfs-Be-165" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wfp-LV-uZy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -57,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-107.24637681159422" y="-769.41964285714278"/>
+            <point key="canvasLocation" x="-304.34782608695656" y="-773.4375"/>
         </scene>
     </scenes>
 </document>
