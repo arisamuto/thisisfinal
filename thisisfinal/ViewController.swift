@@ -12,7 +12,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     //写真表示用ImageView
     @IBOutlet var photoImageView: UIImageView!
-    @IBOutlet var pictures: UIButton!
+    @IBOutlet var album: UIButton!
+    @IBOutlet var pictures: UIImageView!
+    
     
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
@@ -28,10 +30,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         scrollview.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height * 7)
         scrollview.isPagingEnabled = true
         let size = scrollview.frame.size
-        //ラベルを最前面に移動
-        self.view.bringSubviewToFront(myLabel)
         
-    
                 for i in 0..<7 {
             let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
             
@@ -45,7 +44,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             contentView.addSubview(label)
             self.scrollview.addSubview(contentView)
-            
+                    //ボタンを最前面に移動
+                    self.view.bringSubviewToFront(album)
+                    //写真を最前面に移動
+                    self.view.bringSubviewToFront(pictures)
         }
         }
     //ステイタスバーを非表示にするためにオーバービューする

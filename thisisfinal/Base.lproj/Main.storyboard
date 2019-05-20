@@ -28,11 +28,11 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-Be-165">
-                                <rect key="frame" x="-1" y="308" width="415" height="280"/>
+                                <rect key="frame" x="-1" y="294" width="415" height="361"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Q1-14F">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Q1-14F">
+                                <rect key="frame" x="-1" y="0.0" width="414" height="896"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,13 +49,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="photoImageView" destination="vfs-Be-165" id="FdM-bV-dhp"/>
+                        <outlet property="album" destination="sWk-c4-o49" id="eY4-tt-7OX"/>
+                        <outlet property="photoImageView" destination="vfs-Be-165" id="O7A-Hd-LUe"/>
+                        <outlet property="pictures" destination="vfs-Be-165" id="HNL-y7-R28"/>
                         <outlet property="scrollview" destination="2oG-Q1-14F" id="vWW-uX-4QE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-107" y="-769"/>
+            <point key="canvasLocation" x="-107.24637681159422" y="-769.41964285714278"/>
         </scene>
     </scenes>
 </document>
