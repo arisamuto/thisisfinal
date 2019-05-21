@@ -49,6 +49,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     //写真を最前面に移動
                     self.view.bringSubviewToFront(pictures)
         }
+        //ボタンの文字の色の設定
+        album.setTitleColor(UIColor.yellow, for: UIControl.State.normal)
+        //ボタンの周りのボックスの色の設定
+        album.layer.borderColor = UIColor.blue.cgColor
+        album.layer.borderWidth = 1.0
+        album.layer.cornerRadius = 10 //丸みを数値でか変更
         }
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {
