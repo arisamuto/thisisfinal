@@ -15,11 +15,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet var album: UIButton!
     @IBOutlet var pictures: UIImageView!
     
-    
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
     
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +31,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         scrollview.isPagingEnabled = true
         let size = scrollview.frame.size
         
+               //曜日を入れる
                 for i in 0..<7 {
-            let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
+                    let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
+                    
             
             contentView.backgroundColor = UIColor(red: 0.1*CGFloat(i), green: 0.8, blue: 1.0-0.1*CGFloat(i), alpha: 1.0)
             
-            let label = UILabel(frame: CGRect(x: 0, y: 100, width: size.width, height: 100))
+                    let label = UILabel(frame: CGRect(x: 0, y: 100, width: size.width, height: 100))
             label.textAlignment = .center
             //フォント変える
             label.font = UIFont(name: "Chalkboard SE", size: 70)
@@ -44,10 +46,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             contentView.addSubview(label)
             self.scrollview.addSubview(contentView)
+            self.view.addSubview(scrollview)
+                    
                     //ボタンを最前面に移動
                     self.view.bringSubviewToFront(album)
+                    
                     //写真を最前面に移動
                     self.view.bringSubviewToFront(pictures)
+                    
+        }
+    
+        func addingpictures () {
+            //写真を挿入する
+            for i in 0..<7 {
+                let _: UIImageView = UIImageView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
+                let label2 = UIImageView(frame: CGRect(x: 0, y:100, width: size.width, height: 250))
+                label2.center = self.view.center
+        }
         }
         //ボタンの文字の色の設定
         album.setTitleColor(UIColor.yellow, for: UIControl.State.normal)
@@ -59,6 +74,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {
         return true
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -90,3 +106,4 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         photoImageView.image = info[.originalImage]as? UIImage
     }
 }
+

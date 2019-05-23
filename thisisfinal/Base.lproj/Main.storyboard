@@ -61,7 +61,8 @@
                         <outlet property="album" destination="sWk-c4-o49" id="eY4-tt-7OX"/>
                         <outlet property="photoImageView" destination="vfs-Be-165" id="O7A-Hd-LUe"/>
                         <outlet property="pictures" destination="vfs-Be-165" id="HNL-y7-R28"/>
-                        <outlet property="scrollview" destination="2oG-Q1-14F" id="vWW-uX-4QE"/>
+                        <outlet property="scrollview" destination="2oG-Q1-14F" id="8IT-bW-Nb4"/>
+                        <outlet property="view" destination="2oG-Q1-14F" id="fQF-s0-a4K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
