@@ -9,17 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     //写真表示用ImageView
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var album: UIButton!
-    @IBOutlet var pictures: UIImageView!
+ 
     
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
     
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,46 +31,42 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         scrollview.isPagingEnabled = true
         let size = scrollview.frame.size
         
-               //曜日を入れる
-                for i in 0..<7 {
-                    let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
-                    
+        //曜日を入れる
+        for i in 0..<7 {
+            let contentView: UIView = UIView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
+            
             
             contentView.backgroundColor = UIColor(red: 0.1*CGFloat(i), green: 0.8, blue: 1.0-0.1*CGFloat(i), alpha: 1.0)
             
-                    let label = UILabel(frame: CGRect(x: 0, y: 100, width: size.width, height: 100))
+            let label = UILabel(frame: CGRect(x: 0, y: 100, width: size.width, height: 100))
             label.textAlignment = .center
             //フォント変える
             label.font = UIFont(name: "Chalkboard SE", size: 70)
             label.text = days[i]
             
+            //その日の曜日
+            let addingpictures = UIImageView(frame: CGRect(x: 0, y: 350, width: size.width, height: 270))
+            addingpictures.center = self.view.center
+            
+            
+            
             contentView.addSubview(label)
+            contentView.addSubview(addingpictures)
             self.scrollview.addSubview(contentView)
             self.view.addSubview(scrollview)
-                    
-                    //ボタンを最前面に移動
-                    self.view.bringSubviewToFront(album)
-                    
-                    //写真を最前面に移動
-                    self.view.bringSubviewToFront(pictures)
-                    
+            
+            //ボタンを最前面に移動
+            self.view.bringSubviewToFront(album)
+            
         }
-    
-        func addingpictures () {
-            //写真を挿入する
-            for i in 0..<7 {
-                let _: UIImageView = UIImageView(frame: CGRect(x: 0, y: size.height*CGFloat(i), width: size.width, height: size.height))
-                let label2 = UIImageView(frame: CGRect(x: 0, y:100, width: size.width, height: 250))
-                label2.center = self.view.center
-        }
-        }
+        
         //ボタンの文字の色の設定
         album.setTitleColor(UIColor.yellow, for: UIControl.State.normal)
         //ボタンの周りのボックスの色の設定
         album.layer.borderColor = UIColor.blue.cgColor
         album.layer.borderWidth = 1.0
         album.layer.cornerRadius = 10 //丸みを数値でか変更
-        }
+    }
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {
         return true
@@ -86,7 +82,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         presentPickerController(sourceType: .photoLibrary)
         
     }
-
     
     //アルバムの呼び出しメゾット(アルバムのソースタイプが引数
     func presentPickerController(sourceType: UIImagePickerController.SourceType){
@@ -96,7 +91,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             picker.delegate = self
             self.present(picker, animated:true,completion:nil)
         }
-}
+    }
     
     //写真が選択された時に呼ばれるメソッド
     func imagePickerController(_ picker: UIImagePickerController,
@@ -106,4 +101,3 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         photoImageView.image = info[.originalImage]as? UIImage
     }
 }
-

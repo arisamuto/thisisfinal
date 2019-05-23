@@ -30,12 +30,6 @@
                                     <action selector="onTappedAlbumButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="xR0-nf-5YZ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-Be-165">
-                                <rect key="frame" x="0.0" y="245" width="414" height="248"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="248" id="8LD-8F-5eN"/>
-                                </constraints>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Q1-14F">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </scrollView>
@@ -45,22 +39,16 @@
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MVc-Cg-fdA"/>
                             <constraint firstItem="sWk-c4-o49" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="324" id="QQW-rx-3GF"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TDl-Xr-gu9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vfs-Be-165" secondAttribute="bottom" constant="369" id="Vcg-wf-xJt"/>
                             <constraint firstItem="sWk-c4-o49" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="XEy-8t-L44"/>
                             <constraint firstAttribute="bottom" secondItem="2oG-Q1-14F" secondAttribute="bottom" id="YPV-l9-PKQ"/>
-                            <constraint firstItem="vfs-Be-165" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfc-zn-5Af"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mAX-Lv-ee3"/>
-                            <constraint firstItem="vfs-Be-165" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nul-zt-2Ly"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uPx-Dq-qek"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wEM-At-QVY"/>
-                            <constraint firstItem="vfs-Be-165" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wfp-LV-uZy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="album" destination="sWk-c4-o49" id="eY4-tt-7OX"/>
-                        <outlet property="photoImageView" destination="vfs-Be-165" id="O7A-Hd-LUe"/>
-                        <outlet property="pictures" destination="vfs-Be-165" id="HNL-y7-R28"/>
                         <outlet property="scrollview" destination="2oG-Q1-14F" id="8IT-bW-Nb4"/>
                         <outlet property="view" destination="2oG-Q1-14F" id="fQF-s0-a4K"/>
                     </connections>
