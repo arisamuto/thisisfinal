@@ -20,6 +20,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     
+    var picture: [UIImageView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +47,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             //その日の曜日
             let addingpictures = UIImageView(frame: CGRect(x: 0, y: 350, width: size.width, height: 270))
-            addingpictures.center = self.view.center
+            addingpictures.image = UIImage(named: "moldive")
             
-            
+            picture.append(addingpictures)
             
             contentView.addSubview(label)
             contentView.addSubview(addingpictures)
@@ -98,6 +99,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]) {
         self.dismiss(animated: true, completion: nil)
         //画像を出力
-        photoImageView.image = info[.originalImage]as? UIImage
+//        photoImageView.image = info[.originalImage]as? UIImage
+        
+        
     }
 }
