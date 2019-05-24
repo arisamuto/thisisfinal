@@ -11,15 +11,14 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     //写真表示用ImageView
-    @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var album: UIButton!
  
-    
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
     
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     
+    //写真のからの配列
     var picture: [UIImageView] = []
     
     override func viewDidLoad() {
@@ -46,9 +45,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             label.text = days[i]
             
             //その日の曜日
-            let addingpictures = UIImageView(frame: CGRect(x: 0, y: 350, width: size.width, height: 270))
-            addingpictures.image = UIImage(named: "moldive")
-            
+            let addingpictures = UIImageView(frame: CGRect(x: 0, y: 350, width: size.width, height: 200))
+           
             picture.append(addingpictures)
             
             contentView.addSubview(label)
@@ -98,9 +96,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]) {
         self.dismiss(animated: true, completion: nil)
+        
         //画像を出力
-//        photoImageView.image = info[.originalImage]as? UIImage
+        let n = Int(scrollview.contentOffset.y / view.frame.height)
+        picture[n].image = info[.originalImage] as? UIImage
         
+        //return image as PNG. MAy return nil if image has no CGImagRef or invalid bitmao format
+        public func UIImagePNGRepresentation(image: UIImage); NSData?()
         
-    }
-}
+        //return image as JPEG. May return nil if image has no CGImageRef or invalid bitmap format. compression is 0(most)..1(least)
+        public func UIImageJPEGRepresentation(image: UIImage, _ compressionQuality: CGFloat) -> NSData?
+        
+        let data: NSData? = UIImagePNGRepresentation(UIImage)
+        let data: NSData? = UIImageJPEGRepresentation(UIImage)
+        
+        public init?(data: NSData)
+        let image: UIImage = UIImage(data: data)
+        let image: UIImage? = data.floatMap(UIImage.init)
+
