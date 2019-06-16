@@ -5,14 +5,13 @@
 //  Created by Arisa Muto on 2019/05/11.
 //  Copyright © 2019 Arisa Muto. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     //写真表示用ImageView
     @IBOutlet var album: UIButton!
- 
+    
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
     
@@ -38,15 +37,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             contentView.backgroundColor = UIColor(red: 0.1*CGFloat(i), green: 0.8, blue: 1.0-0.1*CGFloat(i), alpha: 1.0)
             
-            let label = UILabel(frame: CGRect(x: 0, y: 100, width: size.width, height: 100))
+            let label = UILabel(frame: CGRect(x: 0, y: 30, width: size.width, height: 200))
             label.textAlignment = .center
             //フォント変える
             label.font = UIFont(name: "Chalkboard SE", size: 70)
             label.text = days[i]
             
             //その日の曜日
-            let addingpictures = UIImageView(frame: CGRect(x: 0, y: 350, width: size.width, height: 200))
-           
+            let addingpictures = UIImageView(frame: CGRect(x: 0, y: 300, width: size.width, height: 350))
+            
             picture.append(addingpictures)
             
             contentView.addSubview(label)
@@ -100,17 +99,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         //画像を出力
         let n = Int(scrollview.contentOffset.y / view.frame.height)
         picture[n].image = info[.originalImage] as? UIImage
-        
-        //return image as PNG. MAy return nil if image has no CGImagRef or invalid bitmao format
-        public func UIImagePNGRepresentation(image: UIImage); NSData?()
-        
-        //return image as JPEG. May return nil if image has no CGImageRef or invalid bitmap format. compression is 0(most)..1(least)
-        public func UIImageJPEGRepresentation(image: UIImage, _ compressionQuality: CGFloat) -> NSData?
-        
-        let data: NSData? = UIImagePNGRepresentation(UIImage)
-        let data: NSData? = UIImageJPEGRepresentation(UIImage)
-        
-        public init?(data: NSData)
-        let image: UIImage = UIImage(data: data)
-        let image: UIImage? = data.floatMap(UIImage.init)
-
+    }
+    
+    
+}
