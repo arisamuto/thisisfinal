@@ -19,6 +19,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //写真のからの配列
     var picture: [UIImageView] = []
+    var pictureImages:[UIImage] = [UIImage(), UIImage(), UIImage(), UIImage(), UIImage(), UIImage(), UIImage()]
+    var saveArray: Array! = [NSData]()
+    var pictureHasImages:[Bool] = [false, false, false, false, false, false, false]
+    
+    
+    let saveData = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +70,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         album.layer.borderColor = UIColor.blue.cgColor
         album.layer.borderWidth = 1.0
         album.layer.cornerRadius = 10 //丸みを数値でか変更
+        
+        
+        loadPicture()
     }
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {
@@ -96,10 +105,67 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]) {
         self.dismiss(animated: true, completion: nil)
         
-        //画像を出力
+        //        //画像を出力
         let n = Int(scrollview.contentOffset.y / view.frame.height)
         picture[n].image = info[.originalImage] as? UIImage
+        pictureHasImages[n] = true
+        pictureImages[n] = (info[.originalImage] as? UIImage)!
+        savePicture()
+        //
+        //        //return image as PNG. MAy return nil if image has no CGImagRef or invalid bitmao format
+        //        public func UIImagePNGRepresentation(image: UIImage); NSData?()
+        //
+        //        //return image as JPEG. May return nil if image has no CGImageRef or invalid bitmap format. compression is 0(most)..1(least)
+        //        public func UIImageJPEGRepresentation(image: UIImage, _ compressionQuality: CGFloat) -> NSData?
+        //
+        //        let data: NSData? = UIImagePNGRepresentation(UIImage)
+        //        let data: NSData? = UIImageJPEGRepresentation(UIImage)
+        //
+        //        public init?(data: NSData)
+        //        let image: UIImage = UIImage(data: data)
+        //        let image: UIImage? = data.floatMap(UIImage.init)
     }
     
+    func savePicture(){
+        //saveData.set(pictureImages, forKey: "pictureImages")
+        saveData.set(pictureHasImages, forKey: "pictureHasImages")
+        saveArray = []
+        for i in 0..<7{
+            if pictureHasImages[i] == true{
+                let image:UIImage = pictureImages[i]
+                let data = image.pngData()! as NSData
+                saveArray.append(data)
+            }
+        }
+        saveData.set(saveArray, forKey: "saveImage")
+        saveData.synchronize()
+    }
     
+    func loadPicture(){
+        if saveData.array(forKey: "pictureHasImages") != nil {
+            pictureHasImages = saveData.array(forKey: "pictureHasImages") as! [Bool]
+            print(pictureHasImages)
+            
+            if saveData.object(forKey: "saveImage") != nil {
+                let objects = saveData.object(forKey: "saveImage") as? NSArray
+                //配列としてUserDefaultsに保存した時の値と処理後の値が変わってしまうのでremoveAll()
+                saveArray.removeAll()
+                for data in objects! {
+                    saveArray.append(data as! NSData)
+                }
+                var count = 0
+                for i in 0..<7{
+                    if pictureHasImages[i] == true{
+                        pictureImages[i] = UIImage(data: saveArray[count] as Data)!
+                        count += 1
+                    }
+                }
+            }
+            for i in 0..<7 {
+                if pictureHasImages[i] == true{
+                    picture[i].image = pictureImages[i]
+                }
+            }
+        }
+    }
 }
