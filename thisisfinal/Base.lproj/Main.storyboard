@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="thisisfinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-c4-o49" userLabel="album">
@@ -37,7 +37,7 @@
                                 </state>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oG-Q1-14F">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,8 +51,9 @@
                     </view>
                     <connections>
                         <outlet property="album" destination="sWk-c4-o49" id="eY4-tt-7OX"/>
+                        <outlet property="memo" destination="aD9-fq-4mo" id="evI-Nw-c0C"/>
                         <outlet property="scrollview" destination="2oG-Q1-14F" id="8IT-bW-Nb4"/>
-                        <segue destination="BEE-f3-Zr5" kind="presentation" id="l67-q4-WmN"/>
+                        <segue destination="BEE-f3-Zr5" kind="presentation" identifier="tomemo" id="l67-q4-WmN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -64,15 +65,15 @@
             <objects>
                 <tableViewController id="4zQ-VP-lPu" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TDA-bd-LC4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="M3z-Qy-nZ8" customClass="ListTableViewCell" customModule="thisisfinal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M3z-Qy-nZ8" id="oqn-mf-28J">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNk-MM-21j">
@@ -99,7 +100,7 @@
                     <navigationItem key="navigationItem" title="メモ一覧" id="4pQ-Zp-76s"/>
                     <connections>
                         <segue destination="f0B-E1-xIl" kind="show" identifier="toDetail" id="WLy-tm-JjE"/>
-                        <segue destination="yDo-w9-rHJ" kind="presentation" id="hrP-LF-WPF"/>
+                        <segue destination="yDo-w9-rHJ" kind="presentation" identifier="toAddmemo" id="hrP-LF-WPF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="us8-ja-00b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,62 +112,86 @@
             <objects>
                 <viewController id="yDo-w9-rHJ" customClass="AddmemoViewController" customModule="thisisfinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nsi-5c-pyL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-pt-zQd">
-                                <rect key="frame" x="15" y="130" width="345" height="270"/>
+                                <rect key="frame" x="20" y="122" width="374" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-E6-JH4">
-                                <rect key="frame" x="118" y="548" width="138" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-E6-JH4">
+                                <rect key="frame" x="138" y="484" width="138" height="41"/>
                                 <color key="backgroundColor" red="0.90979081390000005" green="0.93211835620000005" blue="0.16853550079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <state key="normal" title="SAVE!!"/>
+                                <connections>
+                                    <action selector="saveWith_sender:" destination="yDo-w9-rHJ" eventType="touchUpInside" id="dTI-TI-Oxw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5yL-E6-JH4" firstAttribute="leading" secondItem="1wN-cX-Mf7" secondAttribute="leading" constant="138" id="ma1-gJ-0BX"/>
+                            <constraint firstItem="1wN-cX-Mf7" firstAttribute="trailing" secondItem="5yL-E6-JH4" secondAttribute="trailing" constant="138" id="uC9-vu-DlB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1wN-cX-Mf7"/>
                     </view>
+                    <connections>
+                        <outlet property="memoTextview" destination="eMe-pt-zQd" id="kdY-Bv-30r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJi-cp-emI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="-1361"/>
+            <point key="canvasLocation" x="1485.5072463768117" y="-1361.3839285714284"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Details-->
         <scene sceneID="YEM-kN-tQX">
             <objects>
                 <viewController id="f0B-E1-xIl" customClass="DetailViewController" customModule="thisisfinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q12-B7-dVx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EQ4-O3-L97" userLabel="memo Text View">
-                                <rect key="frame" x="15" y="130" width="345" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EQ4-O3-L97" userLabel="memo Text View">
+                                <rect key="frame" x="20" y="133" width="374" height="665"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cDW-xt-zsL" firstAttribute="trailing" secondItem="EQ4-O3-L97" secondAttribute="trailing" constant="20" id="4fC-Nc-cNt"/>
+                            <constraint firstItem="cDW-xt-zsL" firstAttribute="bottom" secondItem="EQ4-O3-L97" secondAttribute="bottom" constant="64" id="618-GM-Bg0"/>
+                            <constraint firstItem="EQ4-O3-L97" firstAttribute="leading" secondItem="cDW-xt-zsL" secondAttribute="leading" constant="20" id="Wsp-Jy-6PF"/>
+                            <constraint firstItem="EQ4-O3-L97" firstAttribute="top" secondItem="cDW-xt-zsL" secondAttribute="top" constant="45" id="fn4-Hc-YIo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cDW-xt-zsL"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Details" id="pfx-Yo-18w">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="Pgp-ku-yo9">
+                            <connections>
+                                <action selector="deleteMemo:" destination="f0B-E1-xIl" id="6gh-eE-Rcb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="memoTextview" destination="EQ4-O3-L97" id="ARa-WV-xjm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbW-uG-bdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2012" y="-581"/>
+            <point key="canvasLocation" x="2011.594202898551" y="-581.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M89-jg-WP5">
             <objects>
                 <navigationController id="BEE-f3-Zr5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VQS-zU-Alv">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

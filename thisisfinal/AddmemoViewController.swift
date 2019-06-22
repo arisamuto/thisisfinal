@@ -9,7 +9,7 @@
 import UIKit
 
 class AddmemoViewController: UIViewController {
-
+    
     @IBOutlet var memoTextview: UITextView!
     var text1: String!
     
@@ -28,10 +28,10 @@ class AddmemoViewController: UIViewController {
                 saveMemoArray.append(inputText!)
                 ud.set(saveMemoArray, forKey: "memoArray")
             }else{
-               let alert = UIAlertController(
-                title: "TextBOX", message: "何も入力されていません", preferredStyle: .alert)
-        }
-        
+                _ = UIAlertController(
+                    title: "TextBOX", message: "何も入力されていません", preferredStyle: .alert)
+            }
+            
         }else{
             //最初何も書かれていない場合
             var newMemoArray = [String]()
@@ -41,11 +41,12 @@ class AddmemoViewController: UIViewController {
                 newMemoArray.append(inputText!)
                 ud.set(newMemoArray, forKey: "memoArray")
             }else{
-                let alert = UIAlertController(
+                _ = UIAlertController(
                     title: "保存完了", message: "Good Joob!!", preferredStyle: .alert)
                 ud.synchronize()
+                self.dismiss(animated: true, completion: nil)
+            }
+            
         }
-
-}
-}
+    }
 }

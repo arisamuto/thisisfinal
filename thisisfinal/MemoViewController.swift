@@ -8,15 +8,21 @@
 
 import UIKit
 
-class MemoViewController: UIViewController {
-    @IBOutlet var text: UITextField!
-    let saveData = UserDefaults.standard
+class MemoViewController: UIViewController, UITableViewDataSource,UITableViewDelegate  {
+    
+    @IBOutlet var memoTableView: UITableView!
+     var memoArray = [String]()
+    let ud = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
     }
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 }

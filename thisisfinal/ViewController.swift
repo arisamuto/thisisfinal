@@ -11,7 +11,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     //写真表示用ImageView
     @IBOutlet var album: UIButton!
-    
+    @IBOutlet var memo: UIButton!
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
     
@@ -61,23 +61,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             
             //ボタンを最前面に移動
             self.view.bringSubviewToFront(album)
-            
+            //ボタンを最前面に移動
+            self.view.bringSubviewToFront(memo)
         }
         
         //ボタンの文字の色の設定
         album.setTitleColor(UIColor.yellow, for: UIControl.State.normal)
+        memo.setTitleColor(UIColor.orange, for: UIControl.State.normal)
         //ボタンの周りのボックスの色の設定
         album.layer.borderColor = UIColor.blue.cgColor
+        memo.layer.borderColor = UIColor.blue.cgColor
         album.layer.borderWidth = 1.0
+        memo.layer.borderWidth = 1.0
         album.layer.cornerRadius = 10 //丸みを数値でか変更
-        
-        
+        memo.layer.cornerRadius = 10
+
         loadPicture()
     }
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {
         return true
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -87,9 +90,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     //「アルバム」ボタンを押した時に呼ばれるメソッド
     @IBAction func onTappedAlbumButton() {
         presentPickerController(sourceType: .photoLibrary)
-        
     }
-    
     //アルバムの呼び出しメゾット(アルバムのソースタイプが引数
     func presentPickerController(sourceType: UIImagePickerController.SourceType){
         if UIImagePickerController.isSourceTypeAvailable(sourceType){
