@@ -21,32 +21,30 @@ class AddmemoViewController: UIViewController {
         
         let inputText = memoTextview.text
         let ud = UserDefaults.standard
-        if ud.array(forKey: "memoArray") != nil {
-            //saveMemoArrayに取得
-            var saveMemoArray = ud.array(forKey: "memoArrat") as![String]
-            if inputText != ""{
+        if ud.array(forKey: "memoArray") != nil{
+            var saveMemoArray = ud.array(forKey: "memoArray") as! [String]
+            if inputText != nil{
                 saveMemoArray.append(inputText!)
-                ud.set(saveMemoArray, forKey: "memoArray")
             }else{
-                _ = UIAlertController(
-                    title: "TextBOX", message: "何も入力されていません", preferredStyle: .alert)
+                print("何も入力されていません。")
             }
-            
+            ud.set(saveMemoArray, forKey: "memoArray")
         }else{
-            //最初何も書かれていない場合
             var newMemoArray = [String]()
             //nilを強制アンラップはエラーが出るから
-            if inputText != ""{
+            if inputText != nil{
                 //inputtextはoptional型だから強制アンラップ
                 newMemoArray.append(inputText!)
-                ud.set(newMemoArray, forKey: "memoArray")
             }else{
-                _ = UIAlertController(
-                    title: "保存完了", message: "Good Joob!!", preferredStyle: .alert)
-                ud.synchronize()
-                self.dismiss(animated: true, completion: nil)
+                print("何も入っていません。")
             }
-            
+            ud.set(newMemoArray, forKey: "memoArray")
         }
+        ud.synchronize()
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

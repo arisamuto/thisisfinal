@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
         memoTextview.text = selectedmemo
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func deleteMemo(_ sender: Any) {
         let ud = UserDefaults.standard
         if ud.array(forKey: "memoArray") != nil{
@@ -26,11 +27,7 @@ class DetailViewController: UIViewController {
             ud.set(saveMemoArray, forKey: "memoArray" )
             ud.synchronize()
             //画面遷移
-            
             self.navigationController?.popViewController(animated: true)
-            
         }
-
-
-}
+    }
 }

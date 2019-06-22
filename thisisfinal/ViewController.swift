@@ -14,6 +14,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet var memo: UIButton!
     //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
+
     
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     
@@ -75,21 +76,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         memo.layer.borderWidth = 1.0
         album.layer.cornerRadius = 10 //丸みを数値でか変更
         memo.layer.cornerRadius = 10
-
+        
         loadPicture()
     }
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     //「アルバム」ボタンを押した時に呼ばれるメソッド
     @IBAction func onTappedAlbumButton() {
         presentPickerController(sourceType: .photoLibrary)
+    }
+    @IBAction func onTappedMemoButton(_sender: UIButton) {
+        performSegue(withIdentifier: "tomemo", sender: nil)
     }
     //アルバムの呼び出しメゾット(アルバムのソースタイプが引数
     func presentPickerController(sourceType: UIImagePickerController.SourceType){
