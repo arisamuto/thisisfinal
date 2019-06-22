@@ -9,12 +9,11 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    //写真表示用ImageView
+
     @IBOutlet var album: UIButton!
     @IBOutlet var memo: UIButton!
-    //スクロール機能
     @IBOutlet var scrollview: UIScrollView!
-
+    
     
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     
@@ -86,8 +85,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
     //「アルバム」ボタンを押した時に呼ばれるメソッド
     @IBAction func onTappedAlbumButton() {
         presentPickerController(sourceType: .photoLibrary)
@@ -110,13 +109,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]) {
         self.dismiss(animated: true, completion: nil)
         
-        //        //画像を出力
+    //画像を出力
         let n = Int(scrollview.contentOffset.y / view.frame.height)
         picture[n].image = info[.originalImage] as? UIImage
         pictureHasImages[n] = true
         pictureImages[n] = (info[.originalImage] as? UIImage)!
         savePicture()
-        //
+        
         //        //return image as PNG. MAy return nil if image has no CGImagRef or invalid bitmao format
         //        public func UIImagePNGRepresentation(image: UIImage); NSData?()
         //
@@ -129,6 +128,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         //        public init?(data: NSData)
         //        let image: UIImage = UIImage(data: data)
         //        let image: UIImage? = data.floatMap(UIImage.init)
+        
     }
     
     func savePicture(){
