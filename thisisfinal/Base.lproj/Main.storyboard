@@ -61,41 +61,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1877" y="-1072"/>
+            <point key="canvasLocation" x="-1270" y="-1082"/>
         </scene>
-        <!--メモ一覧-->
-        <scene sceneID="YZK-SC-Ajy">
+        <!--Memo View Controller-->
+        <scene sceneID="Fqm-cH-ExC">
             <objects>
-                <tableViewController id="4zQ-VP-lPu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TDA-bd-LC4">
+                <viewController id="fhZ-xE-w11" customClass="MemoViewController" customModule="thisisfinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mgs-aE-T0H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="upT-hd-shO">
+                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fdu-DZ-vxJ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fdu-DZ-vxJ" id="UWt-MW-0Mu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smD-wu-yxD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Overall" id="eVR-bS-dAA">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="f0f-gf-8rl">
+                                            <connections>
+                                                <segue destination="yDo-w9-rHJ" kind="presentation" id="XSy-9h-jpg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="M3z-Qy-nZ8" customClass="ListTableViewCell" customModule="thisisfinal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M3z-Qy-nZ8" id="oqn-mf-28J">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="メモ一覧" id="4pQ-Zp-76s">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="dJf-NI-xpD">
-                            <connections>
-                                <segue destination="yDo-w9-rHJ" kind="presentation" id="JVd-CE-iYO"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                        <constraints>
+                            <constraint firstItem="upT-hd-shO" firstAttribute="top" secondItem="smD-wu-yxD" secondAttribute="bottom" id="3oQ-zp-aGQ"/>
+                            <constraint firstItem="smD-wu-yxD" firstAttribute="trailing" secondItem="u83-UU-CuL" secondAttribute="trailing" id="Ihs-aC-9gX"/>
+                            <constraint firstItem="upT-hd-shO" firstAttribute="leading" secondItem="u83-UU-CuL" secondAttribute="leading" id="JqK-hS-xDP"/>
+                            <constraint firstItem="upT-hd-shO" firstAttribute="trailing" secondItem="u83-UU-CuL" secondAttribute="trailing" id="KT3-pU-1NB"/>
+                            <constraint firstItem="smD-wu-yxD" firstAttribute="leading" secondItem="u83-UU-CuL" secondAttribute="leading" id="KU9-H7-ewS"/>
+                            <constraint firstItem="upT-hd-shO" firstAttribute="top" secondItem="smD-wu-yxD" secondAttribute="bottom" id="NzM-o4-vch"/>
+                            <constraint firstAttribute="bottom" secondItem="upT-hd-shO" secondAttribute="bottom" id="l0i-At-TbF"/>
+                            <constraint firstItem="smD-wu-yxD" firstAttribute="top" secondItem="u83-UU-CuL" secondAttribute="top" id="vno-I6-0VY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u83-UU-CuL"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gnV-OG-G1X"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="f0B-E1-xIl" kind="show" identifier="toDetail" id="WLy-tm-JjE"/>
+                        <outlet property="memoTableView" destination="upT-hd-shO" id="Erz-Do-RFY"/>
+                        <segue destination="f0B-E1-xIl" kind="show" identifier="toDetail" id="K9E-kn-42x"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goback" id="VMP-2s-L93"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="us8-ja-00b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhl-0y-uuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386.39999999999998" y="-1082.608695652174"/>
+            <point key="canvasLocation" x="502.89855072463774" y="-1082.1428571428571"/>
         </scene>
         <!--Addmemo View Controller-->
         <scene sceneID="tO3-XK-Mwh">
@@ -150,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EQ4-O3-L97" userLabel="memo Text View">
-                                <rect key="frame" x="20" y="133" width="374" height="665"/>
+                                <rect key="frame" x="20" y="133" width="374" height="616"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -178,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbW-uG-bdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2011.594202898551" y="-581.25"/>
+            <point key="canvasLocation" x="1478" y="-683"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M89-jg-WP5">
@@ -189,7 +216,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4zQ-VP-lPu" kind="relationship" relationship="rootViewController" id="VIg-Vc-mZm"/>
+                        <segue destination="fhZ-xE-w11" kind="relationship" relationship="rootViewController" id="XBl-ME-7ou"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhU-TS-yNm" userLabel="First Responder" sceneMemberID="firstResponder"/>

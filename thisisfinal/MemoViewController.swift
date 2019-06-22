@@ -11,6 +11,7 @@ import UIKit
 class MemoViewController: UIViewController, UITableViewDataSource,UITableViewDelegate  {
     
     @IBOutlet weak var memoTableView: UITableView!
+    
     var memoArray = [String]()
     let ud = UserDefaults.standard
     
