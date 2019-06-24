@@ -77,6 +77,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         memo.layer.cornerRadius = 10
         
         loadPicture()
+        
     }
     //ステイタスバーを非表示にするためにオーバービューする
     override var prefersStatusBarHidden: Bool {

@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1271.0144927536232" y="-1082.1428571428571"/>
+            <point key="canvasLocation" x="-1435" y="-1082"/>
         </scene>
         <!--Memo View Controller-->
         <scene sceneID="Fqm-cH-ExC">
@@ -86,7 +86,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smD-wu-yxD">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="453" height="44"/>
                                 <items>
                                     <navigationItem title="Overall" id="eVR-bS-dAA">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="kKA-KV-SAy">
