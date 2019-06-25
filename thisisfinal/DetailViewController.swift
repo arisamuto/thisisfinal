@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         memoTextview.text = selectedmemo
         // Do any additional setup after loading the view.
+        //ステイタスバーを非表示
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     
     @IBAction func deleteMemo(_ sender: Any) {

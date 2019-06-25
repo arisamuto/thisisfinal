@@ -35,6 +35,8 @@ class MemoViewController: UIViewController, UITableViewDataSource,UITableViewDel
         super.viewDidLoad()
         memoTableView.delegate = self
         memoTableView.dataSource = self
+        //ステイタスバーを非表示
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     override func viewWillAppear(_ animated: Bool) {
         loadMemo()

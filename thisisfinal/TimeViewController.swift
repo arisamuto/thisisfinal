@@ -20,7 +20,8 @@ class TimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //ステイタスバーを非表示
+        self.setNeedsStatusBarAppearanceUpdate()
         //ボタン
         back.layer.borderColor = UIColor.blue.cgColor
         back.layer.borderWidth = 1.0
