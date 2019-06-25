@@ -12,6 +12,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     @IBOutlet var album: UIButton!
     @IBOutlet var memo: UIButton!
+    @IBOutlet var time: UIButton!
     @IBOutlet var scrollview: UIScrollView!
     
     
@@ -63,18 +64,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             self.view.bringSubviewToFront(album)
             //ボタンを最前面に移動
             self.view.bringSubviewToFront(memo)
+            //ボタンを最前面に移動
+            self.view.bringSubviewToFront(time)
         }
         
         //ボタンの文字の色の設定
         album.setTitleColor(UIColor.yellow, for: UIControl.State.normal)
         memo.setTitleColor(UIColor.orange, for: UIControl.State.normal)
+        time.setTitleColor(UIColor.yellow, for: UIControl.State.normal)
         //ボタンの周りのボックスの色の設定
         album.layer.borderColor = UIColor.blue.cgColor
         memo.layer.borderColor = UIColor.blue.cgColor
+        time.layer.borderColor = UIColor.blue.cgColor
+        
         album.layer.borderWidth = 1.0
         memo.layer.borderWidth = 1.0
+        time.layer.borderWidth = 1.0
         album.layer.cornerRadius = 10 //丸みを数値でか変更
         memo.layer.cornerRadius = 10
+        time.layer.cornerRadius = 10
         
         loadPicture()
         
@@ -94,6 +102,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     @IBAction func onTappedMemoButton(_sender: UIButton) {
         performSegue(withIdentifier: "tomemo", sender: nil)
+    }
+    @IBAction func onTappedTimeButton(_sender: UIButton) {
+        performSegue(withIdentifier: "totime", sender: nil)
     }
     //アルバムの呼び出しメゾット(アルバムのソースタイプが引数
     func presentPickerController(sourceType: UIImagePickerController.SourceType){
