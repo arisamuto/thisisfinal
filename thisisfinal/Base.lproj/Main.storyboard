@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-c4-o49" userLabel="album">
-                                <rect key="frame" x="300" y="32" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-c4-o49" userLabel="album">
+                                <rect key="frame" x="291" y="25" width="48" height="37"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Album"/>
@@ -40,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trk-fa-V6S">
-                                <rect key="frame" x="50" y="65" width="36" height="37"/>
+                                <rect key="frame" x="44" y="74" width="36" height="37"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <state key="normal" title="Time">
                                     <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -55,12 +54,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sWk-c4-o49" secondAttribute="trailing" constant="75" id="0m8-hU-3DJ"/>
+                            <constraint firstItem="trk-fa-V6S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="3eL-9o-S6f"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6rs-W4-GXH"/>
-                            <constraint firstItem="trk-fa-V6S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="SoN-BA-WTo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="trk-fa-V6S" secondAttribute="bottom" constant="751" id="8zl-Wc-Ary"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TDl-Xr-gu9"/>
                             <constraint firstAttribute="bottom" secondItem="2oG-Q1-14F" secondAttribute="bottom" id="YPV-l9-PKQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="trk-fa-V6S" secondAttribute="bottom" constant="760" id="cEA-QI-shW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trk-fa-V6S" secondAttribute="trailing" constant="328" id="jkI-8i-zdd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sWk-c4-o49" secondAttribute="bottom" constant="800" id="sRR-4D-FyF"/>
+                            <constraint firstItem="sWk-c4-o49" firstAttribute="leading" secondItem="trk-fa-V6S" secondAttribute="trailing" constant="211" id="uTe-p5-1vH"/>
                             <constraint firstItem="2oG-Q1-14F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wEM-At-QVY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -167,8 +168,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KY5-5E-DdR">
-                                <rect key="frame" x="73" y="70" width="44" height="42"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                                <rect key="frame" x="87" y="67" width="104" height="32"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="fhZ-xE-w11" kind="presentation" id="GXZ-YV-aWX"/>
@@ -177,15 +178,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1wN-cX-Mf7" firstAttribute="trailing" secondItem="KY5-5E-DdR" secondAttribute="trailing" constant="297" id="BCq-bO-Dxq"/>
-                            <constraint firstItem="KY5-5E-DdR" firstAttribute="leading" secondItem="1wN-cX-Mf7" secondAttribute="leading" constant="73" id="M2n-mM-1DJ"/>
+                            <constraint firstItem="KY5-5E-DdR" firstAttribute="leading" secondItem="1wN-cX-Mf7" secondAttribute="leading" constant="87" id="10i-V7-sxl"/>
+                            <constraint firstItem="1wN-cX-Mf7" firstAttribute="trailing" secondItem="KY5-5E-DdR" secondAttribute="trailing" constant="223" id="2KC-U5-MD2"/>
                             <constraint firstItem="1wN-cX-Mf7" firstAttribute="trailing" secondItem="eMe-pt-zQd" secondAttribute="trailing" constant="16" id="VQ6-Mh-MrT"/>
+                            <constraint firstItem="eMe-pt-zQd" firstAttribute="top" secondItem="KY5-5E-DdR" secondAttribute="bottom" constant="21" id="bGe-Ka-Hxg"/>
                             <constraint firstItem="1wN-cX-Mf7" firstAttribute="trailing" secondItem="5yL-E6-JH4" secondAttribute="trailing" constant="112" id="cN8-1n-2zZ"/>
                             <constraint firstItem="1wN-cX-Mf7" firstAttribute="bottom" secondItem="5yL-E6-JH4" secondAttribute="bottom" constant="46" id="dzq-9a-3q6"/>
-                            <constraint firstItem="KY5-5E-DdR" firstAttribute="top" secondItem="1wN-cX-Mf7" secondAttribute="top" constant="26" id="hdR-t5-DwS"/>
                             <constraint firstItem="eMe-pt-zQd" firstAttribute="leading" secondItem="1wN-cX-Mf7" secondAttribute="leading" constant="16" id="jQd-Ei-JmH"/>
                             <constraint firstItem="eMe-pt-zQd" firstAttribute="top" secondItem="1wN-cX-Mf7" secondAttribute="top" constant="76" id="maN-2L-9Fy"/>
                             <constraint firstItem="5yL-E6-JH4" firstAttribute="leading" secondItem="1wN-cX-Mf7" secondAttribute="leading" constant="113" id="mqi-R2-pox"/>
+                            <constraint firstItem="KY5-5E-DdR" firstAttribute="top" secondItem="1wN-cX-Mf7" secondAttribute="top" constant="23" id="phm-md-sWe"/>
                             <constraint firstItem="5yL-E6-JH4" firstAttribute="top" secondItem="eMe-pt-zQd" secondAttribute="bottom" constant="52" id="rYE-OH-w2O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1wN-cX-Mf7"/>
@@ -197,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJi-cp-emI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479.375" y="-1365"/>
+            <point key="canvasLocation" x="1479.2" y="-1365.5172413793105"/>
         </scene>
         <!--Details-->
         <scene sceneID="YEM-kN-tQX">
@@ -263,120 +265,84 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpt-hi-Qz3" userLabel="Hour1">
-                                <rect key="frame" x="90" y="193" width="34" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="eGG-bA-txz"/>
-                                    <constraint firstAttribute="width" constant="34" id="zy1-e7-Dki"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
-                                <color key="textColor" red="1" green="0.70758793929999997" blue="0.43507882399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0L-zm-hGz">
-                                <rect key="frame" x="162" y="193" width="34" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="Got-M2-KcU"/>
-                                    <constraint firstAttribute="height" constant="60" id="PuM-lZ-zu0"/>
-                                </constraints>
+                                <rect key="frame" x="130" y="280" width="34" height="65.5"/>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
                                 <color key="textColor" red="1" green="0.74843840620000002" blue="0.24622258799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5L-0j-yo1">
-                                <rect key="frame" x="244" y="193" width="15.5" height="65.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0L-zm-hGz">
+                                <rect key="frame" x="220" y="280" width="34" height="65.5"/>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTL-7I-6AA">
-                                <rect key="frame" x="143" y="383" width="34" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="Aw6-j0-giu"/>
-                                    <constraint firstAttribute="width" constant="34" id="PLN-qG-zid"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
-                                <color key="textColor" red="0.4244665983" green="1" blue="0.19502688300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlJ-TI-Tpc">
-                                <rect key="frame" x="211" y="383" width="34" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="FQf-aH-PuG"/>
-                                    <constraint firstAttribute="height" constant="66" id="yKw-tv-YRB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
-                                <color key="textColor" red="0.4244665983" green="1" blue="0.19502688300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.74843840620000002" blue="0.24622258799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLi-Fq-A92">
-                                <rect key="frame" x="276" y="383" width="15.5" height="65.5"/>
+                                <rect key="frame" x="315" y="467" width="15.5" height="65.5"/>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f99-f9-zTs">
-                                <rect key="frame" x="191" y="555" width="33.5" height="65.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="33.5" id="VwG-53-FMa"/>
-                                    <constraint firstAttribute="height" constant="65.5" id="t6r-sf-JOj"/>
-                                </constraints>
+                                <rect key="frame" x="191" y="639" width="33.5" height="65.5"/>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-c9-noj">
-                                <rect key="frame" x="267" y="555" width="33.5" height="65.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65.5" id="MhN-eg-S4T"/>
-                                    <constraint firstAttribute="width" constant="33.5" id="pIM-ns-csu"/>
-                                </constraints>
+                                <rect key="frame" x="306" y="639" width="33.5" height="65.5"/>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtU-mF-dTr">
-                                <rect key="frame" x="48" y="100" width="52" height="41"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="XdM-TH-pCA"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlJ-TI-Tpc">
+                                <rect key="frame" x="233" y="459" width="34" height="66"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
+                                <color key="textColor" red="0.4244665983" green="1" blue="0.19502688300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTL-7I-6AA">
+                                <rect key="frame" x="143" y="459" width="34" height="65.5"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
+                                <color key="textColor" red="0.4244665983" green="1" blue="0.19502688300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5L-0j-yo1">
+                                <rect key="frame" x="306" y="280" width="15.5" height="65.5"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5fw-0L-VCC" firstAttribute="bottom" secondItem="f99-f9-zTs" secondAttribute="bottom" constant="241.5" id="1N5-bN-08t"/>
-                            <constraint firstItem="YTL-7I-6AA" firstAttribute="top" secondItem="f0L-zm-hGz" secondAttribute="bottom" constant="130" id="6x8-r8-bAe"/>
-                            <constraint firstItem="5fw-0L-VCC" firstAttribute="trailing" secondItem="c3w-c9-noj" secondAttribute="trailing" constant="113.5" id="9aU-Zi-eq3"/>
-                            <constraint firstItem="5fw-0L-VCC" firstAttribute="bottom" secondItem="c3w-c9-noj" secondAttribute="bottom" constant="241.5" id="F8b-rT-lEG"/>
-                            <constraint firstItem="5fw-0L-VCC" firstAttribute="trailing" secondItem="H5L-0j-yo1" secondAttribute="trailing" constant="154.5" id="GFh-Ci-KIz"/>
-                            <constraint firstItem="rpt-hi-Qz3" firstAttribute="top" secondItem="CtU-mF-dTr" secondAttribute="bottom" constant="52" id="GpF-iP-BaA"/>
-                            <constraint firstItem="H5L-0j-yo1" firstAttribute="leading" secondItem="f0L-zm-hGz" secondAttribute="trailing" constant="48" id="Lpu-a8-fwj"/>
-                            <constraint firstItem="rpt-hi-Qz3" firstAttribute="leading" secondItem="5fw-0L-VCC" secondAttribute="leading" constant="90" id="Vkc-rk-qCF"/>
-                            <constraint firstItem="CtU-mF-dTr" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="12" id="Xgp-PA-5pp"/>
-                            <constraint firstItem="H5L-0j-yo1" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="105" id="Z8N-KP-cMD"/>
-                            <constraint firstItem="rpt-hi-Qz3" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="105" id="axD-Ul-2zO"/>
-                            <constraint firstItem="f99-f9-zTs" firstAttribute="top" secondItem="BlJ-TI-Tpc" secondAttribute="bottom" constant="106" id="bLo-3d-yq8"/>
-                            <constraint firstItem="BlJ-TI-Tpc" firstAttribute="leading" secondItem="YTL-7I-6AA" secondAttribute="trailing" constant="34" id="cvm-uJ-ml5"/>
-                            <constraint firstItem="5fw-0L-VCC" firstAttribute="trailing" secondItem="CtU-mF-dTr" secondAttribute="trailing" constant="314" id="fA7-IV-6ma"/>
-                            <constraint firstItem="YLi-Fq-A92" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="295" id="gTR-Sx-QtU"/>
-                            <constraint firstItem="YLi-Fq-A92" firstAttribute="leading" secondItem="BlJ-TI-Tpc" secondAttribute="trailing" constant="31" id="gwE-XA-u7F"/>
-                            <constraint firstItem="CtU-mF-dTr" firstAttribute="leading" secondItem="5fw-0L-VCC" secondAttribute="leading" constant="48" id="hkv-fI-WQ0"/>
-                            <constraint firstItem="BlJ-TI-Tpc" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="295" id="jFz-Wv-dhr"/>
-                            <constraint firstItem="c3w-c9-noj" firstAttribute="leading" secondItem="f99-f9-zTs" secondAttribute="trailing" constant="42.5" id="kTh-Bk-Yft"/>
-                            <constraint firstItem="f0L-zm-hGz" firstAttribute="leading" secondItem="rpt-hi-Qz3" secondAttribute="trailing" constant="38" id="rtp-Hl-9Os"/>
-                            <constraint firstItem="c3w-c9-noj" firstAttribute="top" secondItem="YLi-Fq-A92" secondAttribute="bottom" constant="106.5" id="wQM-Zd-zH2"/>
-                            <constraint firstItem="f99-f9-zTs" firstAttribute="leading" secondItem="5fw-0L-VCC" secondAttribute="leading" constant="191" id="wsX-8u-hNU"/>
-                            <constraint firstItem="5fw-0L-VCC" firstAttribute="bottom" secondItem="rpt-hi-Qz3" secondAttribute="bottom" constant="609" id="xlA-F5-20L"/>
-                            <constraint firstItem="YTL-7I-6AA" firstAttribute="leading" secondItem="5fw-0L-VCC" secondAttribute="leading" constant="143" id="y2x-St-gwX"/>
-                            <constraint firstItem="5fw-0L-VCC" firstAttribute="trailing" secondItem="YLi-Fq-A92" secondAttribute="trailing" constant="122.5" id="ys8-xf-kOz"/>
-                            <constraint firstItem="f0L-zm-hGz" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="105" id="zFa-HB-VsJ"/>
+                            <constraint firstItem="5fw-0L-VCC" firstAttribute="bottom" secondItem="c3w-c9-noj" secondAttribute="bottom" constant="157.5" id="6ud-zM-69q"/>
+                            <constraint firstItem="f99-f9-zTs" firstAttribute="leading" secondItem="5fw-0L-VCC" secondAttribute="leading" constant="191" id="JjU-8Q-u3o"/>
+                            <constraint firstItem="5fw-0L-VCC" firstAttribute="trailing" secondItem="YLi-Fq-A92" secondAttribute="trailing" constant="83.5" id="NfR-7a-KWX"/>
+                            <constraint firstItem="c3w-c9-noj" firstAttribute="top" secondItem="YLi-Fq-A92" secondAttribute="bottom" constant="106.33" id="ODc-ED-ki8"/>
+                            <constraint firstItem="BlJ-TI-Tpc" firstAttribute="leading" secondItem="YTL-7I-6AA" secondAttribute="trailing" constant="56" id="Ped-6p-yrO"/>
+                            <constraint firstItem="5fw-0L-VCC" firstAttribute="bottom" secondItem="f99-f9-zTs" secondAttribute="bottom" constant="157.5" id="Q8x-Ko-JqS"/>
+                            <constraint firstItem="5fw-0L-VCC" firstAttribute="trailing" secondItem="H5L-0j-yo1" secondAttribute="trailing" constant="92.5" id="U2z-pg-mT4"/>
+                            <constraint firstItem="YLi-Fq-A92" firstAttribute="leading" secondItem="BlJ-TI-Tpc" secondAttribute="trailing" constant="48" id="WBI-hW-n6X"/>
+                            <constraint firstItem="BlJ-TI-Tpc" firstAttribute="top" secondItem="f0L-zm-hGz" secondAttribute="bottom" constant="113.5" id="cQn-A7-Pz5"/>
+                            <constraint firstItem="YTL-7I-6AA" firstAttribute="top" secondItem="rpt-hi-Qz3" secondAttribute="bottom" constant="113.5" id="jGS-hG-kFP"/>
+                            <constraint firstItem="rpt-hi-Qz3" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="192" id="lZq-7I-J03"/>
+                            <constraint firstItem="f0L-zm-hGz" firstAttribute="top" secondItem="5fw-0L-VCC" secondAttribute="top" constant="192" id="nhx-ux-ntr"/>
+                            <constraint firstItem="5fw-0L-VCC" firstAttribute="bottom" secondItem="BlJ-TI-Tpc" secondAttribute="bottom" constant="337" id="p17-38-3hz"/>
+                            <constraint firstItem="YTL-7I-6AA" firstAttribute="leading" secondItem="5fw-0L-VCC" secondAttribute="leading" constant="143" id="qw2-cT-4iC"/>
+                            <constraint firstItem="rpt-hi-Qz3" firstAttribute="leading" secondItem="5fw-0L-VCC" secondAttribute="leading" constant="130" id="rUS-NC-g68"/>
+                            <constraint firstItem="f0L-zm-hGz" firstAttribute="leading" secondItem="rpt-hi-Qz3" secondAttribute="trailing" constant="56" id="wFB-56-Vx9"/>
+                            <constraint firstItem="5fw-0L-VCC" firstAttribute="trailing" secondItem="c3w-c9-noj" secondAttribute="trailing" constant="74.5" id="zTd-Vc-Awp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5fw-0L-VCC"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4tP-WV-3f0"/>
+                    <navigationItem key="navigationItem" id="4tP-WV-3f0">
+                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="05C-PU-WlF">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="B3E-Wk-WLk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="back" destination="CtU-mF-dTr" id="Wgv-t2-k8a"/>
                         <outlet property="hour1Label" destination="f0L-zm-hGz" id="har-5x-KtZ"/>
                         <outlet property="hour2Label" destination="rpt-hi-Qz3" id="ve1-y3-hcO"/>
                         <outlet property="minute1Label" destination="BlJ-TI-Tpc" id="HO9-sr-vdk"/>
@@ -387,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GkW-t7-jzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491.304347826087" y="-1876.3392857142856"/>
+            <point key="canvasLocation" x="-492.75362318840581" y="-1877.0089285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M89-jg-WP5">
@@ -408,6 +374,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GXZ-YV-aWX"/>
-        <segue reference="XdM-TH-pCA"/>
+        <segue reference="B3E-Wk-WLk"/>
     </inferredMetricsTieBreakers>
 </document>

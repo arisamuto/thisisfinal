@@ -10,7 +10,7 @@ import UIKit
 
 class TimeViewController: UIViewController {
     
-    @IBOutlet var back :UIButton!
+
     @IBOutlet var hour2Label: UILabel!
     @IBOutlet var hour1Label: UILabel!
     @IBOutlet var minute2Label: UILabel!
@@ -22,10 +22,7 @@ class TimeViewController: UIViewController {
         super.viewDidLoad()
         //ステイタスバーを非表示
         self.setNeedsStatusBarAppearanceUpdate()
-        //ボタン
-        back.layer.borderColor = UIColor.blue.cgColor
-        back.layer.borderWidth = 1.0
-        back.layer.cornerRadius = 10
+        
         
         
         let timer = Timer.scheduledTimer(timeInterval: 1.0,

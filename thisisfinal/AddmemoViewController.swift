@@ -32,7 +32,8 @@ class AddmemoViewController: UIViewController {
         let alert = UIAlertController(
             title: "保存完了", message: "メモ追加しました", preferredStyle: .alert
         )
-   
+  
+        
         
         if ud.array(forKey: "memoArray") != nil{
             var saveMemoArray = ud.array(forKey: "memoArray") as! [String]
