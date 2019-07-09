@@ -16,6 +16,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet var scrollview: UIScrollView!
     
     
+    
+    
     let days: [String] = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     
     //写真のからの配列
@@ -77,7 +79,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         memo.layer.borderColor = UIColor.blue.cgColor
         time.layer.borderColor = UIColor.blue.cgColor
         
-        album.layer.borderWidth = 1.0
+       
         memo.layer.borderWidth = 1.0
         time.layer.borderWidth = 1.0
         album.layer.cornerRadius = 10 //丸みを数値でか変更
